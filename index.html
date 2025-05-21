@@ -45,6 +45,26 @@
       background: #fff;
     }
 
+    /* INTRO BLOCK styles */
+    .intro-row {
+      display: flex;
+      margin: 0 24px 32px 24px;
+      background: #eaf1fb;
+      border-radius: 8px;
+    }
+
+    .intro-col {
+      width: 50%;
+      padding: 24px 32px;
+      box-sizing: border-box;
+    }
+
+    .intro-col.left {
+      border-right: 1px solid #d2e3f7;
+    }
+
+    .intro-col.right {}
+
     .question {
       font-weight: bold;
       color: #2a4d7a;
@@ -103,6 +123,29 @@
         font-size: 1.3em;
         margin-top: 16px;
       }
+
+      /* INTRO BLOCK improved mobile styles */
+      .intro-row {
+        flex-direction: column;
+        margin: 0 4px 24px 4px;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+      }
+
+      .intro-col {
+        width: 100%;
+        border-right: none !important;
+        padding: 14px 0 14px 0;
+        margin-bottom: 12px;
+        background: #f5f8fc;
+        border-radius: 8px;
+      }
+
+      .intro-col:last-child {
+        margin-bottom: 0;
+      }
     }
 
     @media (max-width: 600px) {
@@ -137,6 +180,16 @@
         font-size: 1.1em;
         margin-top: 10px;
       }
+
+      /* INTRO BLOCK improved mobile styles */
+      .intro-row {
+        margin: 0 0 12px 0;
+      }
+
+      .intro-col {
+        padding: 10px 0 10px 0;
+        font-size: 0.98em;
+      }
     }
 
     @media (max-width: 400px) {
@@ -148,6 +201,12 @@
       h1 {
         font-size: 1em;
       }
+
+      /* INTRO BLOCK improved mobile styles */
+      .intro-col {
+        padding: 6px 0 6px 0;
+        font-size: 0.97em;
+      }
     }
   </style>
 </head>
@@ -157,8 +216,7 @@
   <div class="main-container">
     <!-- INTRO BLOCK START -->
     <div class="intro-row" style="display:flex; margin:0 24px 32px 24px; background:#eaf1fb; border-radius:8px;">
-      <div class="intro-col left"
-        style="width:50%; padding:24px 32px; border-right:1px solid #d2e3f7; box-sizing:border-box;">
+      <div class="intro-col left" style="width:100%; padding:24px 32px; box-sizing:border-box; border-right:none;">
         <h2 style="color:#2a4d7a; margin-top:0;">What is Artificial Intelligence?</h2>
         <p style="font-size:1.08em; color:#223; margin-bottom:10px;">Artificial Intelligence (AI) is a field of computer
           science focused on creating systems and programs capable of performing tasks that typically require human
@@ -178,30 +236,6 @@
           <li>Growth of generative models for text, images, music, and video.</li>
           <li>Focus on ethics, transparency, and AI safety.</li>
           <li>Development of tools for automation, data analysis, and creativity support.</li>
-        </ul>
-      </div>
-      <div class="intro-col right" style="width:50%; padding:24px 32px; box-sizing:border-box;">
-        <h2 style="color:#2a4d7a; margin-top:0;">Что такое искусственный интеллект?</h2>
-        <p style="font-size:1.08em; color:#223; margin-bottom:10px;">Искусственный интеллект (Artificial Intelligence,
-          AI) — это область информатики, занимающаяся созданием систем и программ, способных выполнять задачи, которые
-          обычно требуют человеческого интеллекта: понимание языка, обучение, рассуждение, распознавание образов,
-          принятие решений и многое другое.</p>
-        <p style="font-size:1.05em; color:#223; margin-bottom:10px;">Современные инструменты искусственного интеллекта
-          включают:</p>
-        <ul style="font-size:1.05em; color:#223; margin-bottom:10px;">
-          <li><b>ChatGPT</b> — диалоговый искусственный интеллект от OpenAI, способный поддерживать беседу, отвечать на
-            вопросы, помогать с программированием, творчеством и обучением.</li>
-          <li><b>Midjourney, DALL-E, Stable Diffusion</b> — генерация изображений по текстовому описанию.</li>
-          <li><b>Copilot, Tabnine</b> — интеллектуальные помощники для программистов.</li>
-          <li><b>Google Bard, Gemini, Claude</b> — другие современные языковые и мультимодальные модели.</li>
-        </ul>
-        <p style="font-size:1.05em; color:#223; margin-bottom:10px;">Текущие тенденции в ИИ:</p>
-        <ul style="font-size:1.05em; color:#223;">
-          <li>Быстрое развитие больших языковых моделей (LLM), таких как ChatGPT, Gemini, Claude.</li>
-          <li>Интеграция ИИ в повседневные сервисы, бизнес и образование.</li>
-          <li>Рост генеративных моделей для текста, изображений, музыки и видео.</li>
-          <li>Внимание к этике, прозрачности и безопасности ИИ.</li>
-          <li>Развитие инструментов для автоматизации, анализа данных и поддержки творчества.</li>
         </ul>
       </div>
     </div>

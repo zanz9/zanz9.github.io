@@ -12,33 +12,33 @@
       background: #f7f7f7;
     }
 
-    .container {
-      display: flex;
+    .main-container {
       max-width: 1200px;
       margin: 40px auto;
       background: #fff;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
       border-radius: 10px;
       overflow: hidden;
+      padding: 32px 0;
     }
 
-    .column {
+    .qa-row {
+      display: flex;
+    }
+
+    .qa-col {
       width: 50%;
-      padding: 32px 24px;
+      padding: 24px 32px;
       box-sizing: border-box;
     }
 
-    .column.left {
+    .qa-col.left {
       border-right: 1px solid #eee;
       background: #fafbfc;
     }
 
-    .column.right {
+    .qa-col.right {
       background: #fff;
-    }
-
-    .qa {
-      margin-bottom: 32px;
     }
 
     .question {
@@ -48,7 +48,6 @@
     }
 
     .answer {
-      margin-bottom: 0;
       color: #333;
     }
 
@@ -62,6 +61,13 @@
       color: #333;
     }
 
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #2a4d7a, transparent);
+      margin: 0 0 0 0;
+      opacity: 0.3;
+    }
+
     h1 {
       text-align: center;
       color: #2a4d7a;
@@ -69,17 +75,17 @@
     }
 
     @media (max-width: 900px) {
-      .container {
+      .qa-row {
         flex-direction: column;
       }
 
-      .column {
+      .qa-col {
         width: 100%;
         border-right: none;
         border-bottom: 1px solid #eee;
       }
 
-      .column.right {
+      .qa-col.right {
         border-bottom: none;
       }
     }
@@ -88,117 +94,1587 @@
 
 <body>
   <h1>AI Questions & Answers: English | Русский</h1>
-  <div class="container">
-    <div class="column left">
-      <!-- English Q&A -->
-      <!-- Q&A blocks will be inserted here -->
-      <!-- BEGIN ENGLISH -->
-      Q: What is artificial intelligence in general terms?<br>
-      A: Artificial intelligence (AI) is the field of computer science focused on creating systems capable of performing
-      tasks that normally require human intelligence. These tasks include reasoning, learning from experience,
-      understanding language, recognizing patterns, and making decisions. AI can be found in applications ranging from
-      virtual assistants to autonomous vehicles, and its goal is to enable machines to mimic or even surpass human
-      cognitive abilities.<br><br>
-      Q: Name one of the earliest goals of AI research.<br>
-      A: One of the earliest goals of AI research was to develop machines that could simulate human reasoning and
-      problem-solving. For example, researchers aimed to create computer programs that could play chess, solve
-      mathematical theorems, or prove logical statements, demonstrating that machines could perform tasks previously
-      thought to require human intelligence.<br><br>
-      Q: Give an example of a task that is easy for a human to complete, but difficult for a computer (before the advent
-      of advanced AI).<br>
-      A: Recognizing faces in photographs is a task that humans perform effortlessly, even as children, but it was
-      extremely challenging for computers before the development of advanced AI techniques. Early computer systems
-      struggled to identify faces due to variations in lighting, angles, and facial expressions, while humans could
-      easily recognize familiar people in different situations.<br><br>
-      Q: What is machine learning?<br>
-      A: Machine learning is a branch of artificial intelligence that focuses on developing algorithms and statistical
-      models that allow computers to learn from data and improve their performance over time without being explicitly
-      programmed. In machine learning, systems identify patterns in data and use these patterns to make predictions or
-      decisions, such as classifying emails as spam or not spam.<br><br>
-      Q: Name one of the main types of machine learning.<br>
-      A: One of the main types of machine learning is supervised learning. In supervised learning, a model is trained on
-      a labeled dataset, where each example includes both the input data and the correct output. The model learns to map
-      inputs to outputs and can then make predictions on new, unseen data. Examples include image classification and
-      speech recognition.<br><br>
-      Q: What is a neural network in the context of AI?<br>
-      A: A neural network is a computational model inspired by the structure and function of the human brain. It
-      consists of layers of interconnected nodes (neurons), where each connection has a weight that is adjusted during
-      training. Neural networks are capable of learning complex relationships in data and are widely used in tasks such
-      as image recognition, natural language processing, and game playing.<br><br>
-      Q: Give a simple example of using artificial intelligence in everyday life.<br>
-      A: One common example of AI in everyday life is the use of voice assistants like Siri, Alexa, or Google Assistant.
-      These systems use AI to understand spoken language, interpret user requests, and provide relevant responses or
-      perform actions such as setting reminders, playing music, or answering questions.<br><br>
-      Q: What is an algorithm in programming and how is it related to AI?<br>
-      A: An algorithm is a step-by-step procedure or set of rules for solving a specific problem or performing a
-      computation. In AI, algorithms are used to process data, learn from examples, and make decisions. For instance, a
-      sorting algorithm arranges data in order, while a machine learning algorithm might classify emails as spam or not
-      spam based on their content.<br><br>
-      Q: What is data in machine learning?<br>
-      A: In machine learning, data refers to the collection of examples or observations used to train and evaluate
-      models. This data can be structured (like tables of numbers) or unstructured (like text, images, or audio). The
-      quality and quantity of data are crucial for building accurate and reliable machine learning models.<br><br>
-      Q: What is the concept behind learning with a teacher?<br>
-      A: Learning with a teacher, also known as supervised learning, involves training a model on a dataset where each
-      input is paired with the correct output (label). The model learns to predict the output from the input by
-      minimizing the difference between its predictions and the true labels. For example, in handwriting recognition,
-      the model is shown images of handwritten digits along with the correct digit labels, allowing it to learn how to
-      recognize new digits in the future.<br><br>
-      <!-- END ENGLISH -->
+  <div class="main-container">
+    <!-- QA BLOCKS START -->
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What is artificial intelligence in general terms?</div>
+        <div class="answer">A: Artificial intelligence (AI) is the field of computer science focused on creating systems
+          capable of performing tasks that normally require human intelligence. These tasks include reasoning, learning
+          from experience, understanding language, recognizing patterns, and making decisions. AI can be found in
+          applications ranging from virtual assistants to autonomous vehicles, and its goal is to enable machines to
+          mimic or even surpass human cognitive abilities.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Что такое искусственный интеллект в общих чертах?</div>
+        <div class="ru-answer">О: Искусственный интеллект (ИИ) — это область информатики, занимающаяся созданием систем,
+          способных выполнять задачи, которые обычно требуют человеческого интеллекта. К таким задачам относятся
+          рассуждение, обучение на опыте, понимание языка, распознавание образов и принятие решений. ИИ применяется в
+          виртуальных ассистентах, автономных транспортных средствах и других сферах, а его цель — позволить машинам
+          имитировать или даже превосходить когнитивные способности человека.</div>
+      </div>
     </div>
-    <div class="column right">
-      <!-- Russian Q&A -->
-      <!-- BEGIN RUSSIAN -->
-      В: Что такое искусственный интеллект в общих чертах?<br>
-      О: Искусственный интеллект (ИИ) — это область информатики, занимающаяся созданием систем, способных выполнять
-      задачи, которые обычно требуют человеческого интеллекта. К таким задачам относятся рассуждение, обучение на опыте,
-      понимание языка, распознавание образов и принятие решений. ИИ применяется в виртуальных ассистентах, автономных
-      транспортных средствах и других сферах, а его цель — позволить машинам имитировать или даже превосходить
-      когнитивные способности человека.<br><br>
-      В: Назовите одну из первых целей исследований в области ИИ.<br>
-      О: Одной из первых целей исследований ИИ было создание машин, способных имитировать человеческое рассуждение и
-      решение задач. Например, учёные стремились создать программы, которые могли бы играть в шахматы, доказывать
-      математические теоремы или логические утверждения, показывая, что машины могут выполнять задачи, ранее считавшиеся
-      доступными только человеку.<br><br>
-      В: Приведите пример задачи, которую человеку легко выполнить, а компьютеру (до появления продвинутого ИИ) —
-      сложно.<br>
-      О: Распознавание лиц на фотографиях — задача, которую человек выполняет легко, даже в детстве, но для компьютеров
-      она была крайне сложной до появления современных методов ИИ. Ранние системы плохо справлялись с изменениями
-      освещения, ракурса и выражения лица, в то время как человек легко узнаёт знакомых людей в разных условиях.<br><br>
-      В: Что такое машинное обучение?<br>
-      О: Машинное обучение — это раздел искусственного интеллекта, который разрабатывает алгоритмы и статистические
-      модели, позволяющие компьютерам учиться на данных и улучшать свои результаты без явного программирования. Такие
-      системы выявляют закономерности в данных и используют их для прогнозирования или принятия решений, например, для
-      фильтрации спама.<br><br>
-      В: Назовите один из основных типов машинного обучения.<br>
-      О: Один из основных типов машинного обучения — обучение с учителем. В этом подходе модель обучается на размеченных
-      данных, где каждому примеру соответствует правильный ответ. Модель учится сопоставлять входные данные с выходными
-      и может делать прогнозы на новых данных. Примеры: классификация изображений, распознавание речи.<br><br>
-      В: Что такое нейронная сеть в контексте ИИ?<br>
-      О: Нейронная сеть — это вычислительная модель, вдохновлённая структурой и работой человеческого мозга. Она состоит
-      из слоёв взаимосвязанных узлов (нейронов), связи между которыми имеют веса, изменяемые в процессе обучения.
-      Нейронные сети способны выявлять сложные зависимости в данных и широко применяются для распознавания изображений,
-      обработки языка и игр.<br><br>
-      В: Приведите простой пример использования искусственного интеллекта в повседневной жизни.<br>
-      О: Один из распространённых примеров ИИ в быту — голосовые ассистенты, такие как Siri, Alexa или Google Assistant.
-      Эти системы используют ИИ для понимания речи, интерпретации запросов пользователя и выполнения действий: установки
-      напоминаний, воспроизведения музыки, ответа на вопросы и др.<br><br>
-      В: Что такое алгоритм в программировании и как он связан с ИИ?<br>
-      О: Алгоритм — это пошаговая процедура или набор правил для решения конкретной задачи или вычисления. В ИИ
-      алгоритмы используются для обработки данных, обучения на примерах и принятия решений. Например, алгоритм
-      сортировки упорядочивает данные, а алгоритм машинного обучения может классифицировать письма как спам или не спам
-      по их содержанию.<br><br>
-      В: Что такое данные в машинном обучении?<br>
-      О: В машинном обучении данные — это совокупность примеров или наблюдений, используемых для обучения и оценки
-      моделей. Данные могут быть структурированными (например, таблицы чисел) или неструктурированными (текст,
-      изображения, аудио). Качество и объём данных критически важны для построения точных и надёжных моделей.<br><br>
-      В: В чём суть обучения с учителем?<br>
-      О: Обучение с учителем — это процесс, при котором модель обучается на наборе данных, где каждому входу
-      соответствует правильный выход (метка). Модель учится предсказывать выход по входу, минимизируя разницу между
-      своими предсказаниями и истинными метками. Например, при распознавании рукописных цифр модель видит изображения и
-      правильные ответы, чтобы научиться распознавать новые цифры.<br><br>
-      <!-- END RUSSIAN -->
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Name one of the earliest goals of AI research.</div>
+        <div class="answer">A: One of the earliest goals of AI research was to develop machines that could simulate
+          human reasoning and problem-solving. For example, researchers aimed to create computer programs that could
+          play chess, solve mathematical theorems, or prove logical statements, demonstrating that machines could
+          perform tasks previously thought to require human intelligence.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Назовите одну из первых целей исследований в области ИИ.</div>
+        <div class="ru-answer">О: Одной из первых целей исследований ИИ было создание машин, способных имитировать
+          человеческое рассуждение и решение задач. Например, учёные стремились создать программы, которые могли бы
+          играть в шахматы, доказывать математические теоремы или логические утверждения, показывая, что машины могут
+          выполнять задачи, ранее считавшиеся доступными только человеку.</div>
+      </div>
     </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Give an example of a task that is easy for a human to complete, but difficult for a
+          computer (before the advent of advanced AI).</div>
+        <div class="answer">A: Recognizing faces in photographs is a task that humans perform effortlessly, even as
+          children, but it was extremely challenging for computers before the development of advanced AI techniques.
+          Early computer systems struggled to identify faces due to variations in lighting, angles, and facial
+          expressions, while humans could easily recognize familiar people in different situations.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Приведите пример задачи, которую человеку легко выполнить, а компьютеру (до
+          появления продвинутого ИИ) — сложно.</div>
+        <div class="ru-answer">О: Распознавание лиц на фотографиях — задача, которую человек выполняет легко, даже в
+          детстве, но для компьютеров она была крайне сложной до появления современных методов ИИ. Ранние системы плохо
+          справлялись с изменениями освещения, ракурса и выражения лица, в то время как человек легко узнаёт знакомых
+          людей в разных условиях.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What is machine learning?</div>
+        <div class="answer">A: Machine learning is a branch of artificial intelligence that focuses on developing
+          algorithms and statistical models that allow computers to learn from data and improve their performance over
+          time without being explicitly programmed. In machine learning, systems identify patterns in data and use these
+          patterns to make predictions or decisions, such as classifying emails as spam or not spam.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Что такое машинное обучение?</div>
+        <div class="ru-answer">О: Машинное обучение — это раздел искусственного интеллекта, который разрабатывает
+          алгоритмы и статистические модели, позволяющие компьютерам учиться на данных и улучшать свои результаты без
+          явного программирования. Такие системы выявляют закономерности в данных и используют их для прогнозирования
+          или принятия решений, например, для фильтрации спама.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Name one of the main types of machine learning.</div>
+        <div class="answer">A: One of the main types of machine learning is supervised learning. In supervised learning,
+          a model is trained on a labeled dataset, where each example includes both the input data and the correct
+          output. The model learns to map inputs to outputs and can then make predictions on new, unseen data. Examples
+          include image classification and speech recognition.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Назовите один из основных типов машинного обучения.</div>
+        <div class="ru-answer">О: Один из основных типов машинного обучения — обучение с учителем. В этом подходе модель
+          обучается на размеченных данных, где каждому примеру соответствует правильный ответ. Модель учится
+          сопоставлять входные данные с выходными и может делать прогнозы на новых данных. Примеры: классификация
+          изображений, распознавание речи.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What is a neural network in the context of AI?</div>
+        <div class="answer">A: A neural network is a computational model inspired by the structure and function of the
+          human brain. It consists of layers of interconnected nodes (neurons), where each connection has a weight that
+          is adjusted during training. Neural networks are capable of learning complex relationships in data and are
+          widely used in tasks such as image recognition, natural language processing, and game playing.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Что такое нейронная сеть в контексте ИИ?</div>
+        <div class="ru-answer">О: Нейронная сеть — это вычислительная модель, вдохновлённая структурой и работой
+          человеческого мозга. Она состоит из слоёв взаимосвязанных узлов (нейронов), связи между которыми имеют веса,
+          изменяемые в процессе обучения. Нейронные сети способны выявлять сложные зависимости в данных и широко
+          применяются для распознавания изображений, обработки языка и игр.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Give a simple example of using artificial intelligence in everyday life.</div>
+        <div class="answer">A: One common example of AI in everyday life is the use of voice assistants like Siri,
+          Alexa, or Google Assistant. These systems use AI to understand spoken language, interpret user requests, and
+          provide relevant responses or perform actions such as setting reminders, playing music, or answering
+          questions.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Приведите простой пример использования искусственного интеллекта в повседневной
+          жизни.</div>
+        <div class="ru-answer">О: Один из распространённых примеров ИИ в быту — голосовые ассистенты, такие как Siri,
+          Alexa или Google Assistant. Эти системы используют ИИ для понимания речи, интерпретации запросов пользователя
+          и выполнения действий: установки напоминаний, воспроизведения музыки, ответа на вопросы и др.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What is an algorithm in programming and how is it related to AI?</div>
+        <div class="answer">A: An algorithm is a step-by-step procedure or set of rules for solving a specific problem
+          or performing a computation. In AI, algorithms are used to process data, learn from examples, and make
+          decisions. For instance, a sorting algorithm arranges data in order, while a machine learning algorithm might
+          classify emails as spam or not spam based on their content.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Что такое алгоритм в программировании и как он связан с ИИ?</div>
+        <div class="ru-answer">О: Алгоритм — это пошаговая процедура или набор правил для решения конкретной задачи или
+          вычисления. В ИИ алгоритмы используются для обработки данных, обучения на примерах и принятия решений.
+          Например, алгоритм сортировки упорядочивает данные, а алгоритм машинного обучения может классифицировать
+          письма как спам или не спам по их содержанию.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What is data in machine learning?</div>
+        <div class="answer">A: In machine learning, data refers to the collection of examples or observations used to
+          train and evaluate models. This data can be structured (like tables of numbers) or unstructured (like text,
+          images, or audio). The quality and quantity of data are crucial for building accurate and reliable machine
+          learning models.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Что такое данные в машинном обучении?</div>
+        <div class="ru-answer">О: В машинном обучении данные — это совокупность примеров или наблюдений, используемых
+          для обучения и оценки моделей. Данные могут быть структурированными (например, таблицы чисел) или
+          неструктурированными (текст, изображения, аудио). Качество и объём данных критически важны для построения
+          точных и надёжных моделей.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What is the concept behind learning with a teacher?</div>
+        <div class="answer">A: Learning with a teacher, also known as supervised learning, involves training a model on
+          a dataset where each input is paired with the correct output (label). The model learns to predict the output
+          from the input by minimizing the difference between its predictions and the true labels. For example, in
+          handwriting recognition, the model is shown images of handwritten digits along with the correct digit labels,
+          allowing it to learn how to recognize new digits in the future.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: В чём суть обучения с учителем?</div>
+        <div class="ru-answer">О: Обучение с учителем — это процесс, при котором модель обучается на наборе данных, где
+          каждому входу соответствует правильный выход (метка). Модель учится предсказывать выход по входу, минимизируя
+          разницу между своими предсказаниями и истинными метками. Например, при распознавании рукописных цифр модель
+          видит изображения и правильные ответы, чтобы научиться распознавать новые цифры.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What is pattern recognition?</div>
+        <div class="answer">A: Pattern recognition is the process by which a computer system identifies regularities,
+          trends, or structures in data. It enables machines to classify input data (such as images, sounds, or text)
+          into categories based on learned patterns. For example, pattern recognition is used in handwriting
+          recognition, where the system learns to distinguish different letters and numbers from images of handwritten
+          text.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Что такое распознавание образов?</div>
+        <div class="ru-answer">О: Распознавание образов — это процесс, при котором компьютерная система выявляет
+          закономерности, тренды или структуры в данных. Это позволяет машинам классифицировать входные данные
+          (например, изображения, звуки или текст) по категориям на основе изученных шаблонов. Например, распознавание
+          образов используется для распознавания рукописного текста, когда система учится различать буквы и цифры на
+          изображениях.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Name one of the application areas of image recognition.</div>
+        <div class="answer">A: One important application area of image recognition is medical diagnostics. For instance,
+          AI systems can analyze medical images such as X-rays, MRIs, or CT scans to detect diseases like cancer,
+          fractures, or infections. This helps doctors make more accurate and timely diagnoses, improving patient
+          outcomes.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Назовите одну из областей применения распознавания изображений.</div>
+        <div class="ru-answer">О: Важная область применения распознавания изображений — медицинская диагностика.
+          Например, ИИ-системы могут анализировать медицинские снимки (рентген, МРТ, КТ) для выявления заболеваний,
+          таких как рак, переломы или инфекции. Это помогает врачам ставить более точные и своевременные диагнозы,
+          улучшая результаты лечения.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What is the "Turing test"?</div>
+        <div class="answer">A: The Turing test, proposed by Alan Turing in 1950, is a method for determining whether a
+          machine can exhibit intelligent behavior indistinguishable from that of a human. In the test, a human judge
+          interacts with both a machine and a human without knowing which is which. If the judge cannot reliably tell
+          the machine from the human, the machine is said to have passed the test.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Что такое «тест Тьюринга»?</div>
+        <div class="ru-answer">О: Тест Тьюринга, предложенный Аланом Тьюрингом в 1950 году, — это способ определить,
+          может ли машина проявлять интеллектуальное поведение, неотличимое от человеческого. В тесте человек-эксперт
+          общается с машиной и человеком, не зная, кто есть кто. Если эксперт не может отличить машину от человека,
+          считается, что машина прошла тест.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What is the main purpose of the "Turing test"?</div>
+        <div class="answer">A: The main purpose of the Turing test is to evaluate a machine's ability to demonstrate
+          human-like intelligence in conversation. It serves as a benchmark for assessing whether artificial
+          intelligence can convincingly imitate human responses and behavior in a given context.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Какова основная цель теста Тьюринга?</div>
+        <div class="ru-answer">О: Основная цель теста Тьюринга — оценить способность машины демонстрировать интеллект,
+          схожий с человеческим, в диалоге. Это эталон для проверки, может ли искусственный интеллект убедительно
+          имитировать человеческие ответы и поведение в заданном контексте.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Explain the difference between strong and weak artificial intelligence. Give examples.
+        </div>
+        <div class="answer">A: Strong AI, also known as artificial general intelligence (AGI), refers to machines that
+          possess the ability to understand, learn, and apply knowledge across a wide range of tasks at a human level or
+          beyond. Weak AI, or narrow AI, is designed to perform specific tasks and lacks general reasoning abilities.
+          For example, a chess-playing program is weak AI, while a hypothetical robot that can learn any intellectual
+          task like a human would be strong AI.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Объясните разницу между сильным и слабым искусственным интеллектом. Приведите
+          примеры.</div>
+        <div class="ru-answer">О: Сильный ИИ (AGI) — это машины, способные понимать, учиться и применять знания в
+          широком спектре задач на уровне человека или выше. Слабый ИИ (узкоспециализированный) предназначен для
+          выполнения конкретных задач и не обладает общими способностями к рассуждению. Например, программа для игры в
+          шахматы — это слабый ИИ, а гипотетический робот, способный учиться любым интеллектуальным задачам, как
+          человек, — сильный ИИ.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: How does learning with a teacher work? Describe the main steps and give an example.
+        </div>
+        <div class="answer">A: Learning with a teacher, or supervised learning, involves several steps: collecting
+          labeled data, splitting it into training and test sets, training a model to map inputs to outputs, and
+          evaluating its performance. For example, in email spam detection, the model is trained on emails labeled as
+          "spam" or "not spam" and learns to classify new emails accordingly.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Как работает обучение с учителем? Опишите основные этапы и приведите пример.</div>
+        <div class="ru-answer">О: Обучение с учителем включает несколько этапов: сбор размеченных данных, разделение их
+          на обучающую и тестовую выборки, обучение модели сопоставлять входы и выходы, оценка её качества. Например,
+          при фильтрации спама модель обучается на письмах с метками «спам» и «не спам» и учится распознавать новые
+          письма.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What is the essence of learning without a teacher? Give an example of a problem solved
+          by this method.</div>
+        <div class="answer">A: Learning without a teacher, or unsupervised learning, involves finding patterns or
+          structures in data that has no labels. The model groups or organizes the data based on similarities. An
+          example is customer segmentation, where an algorithm clusters customers into groups based on purchasing
+          behavior without knowing the group labels in advance.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: В чем суть обучения без учителя? Приведите пример задачи, решаемой этим методом.
+        </div>
+        <div class="ru-answer">О: Обучение без учителя (безразметочное) — это поиск закономерностей или структур в
+          неразмеченных данных. Модель группирует или организует данные по сходству. Пример — сегментация клиентов:
+          алгоритм разбивает покупателей на группы по их поведению, не зная заранее меток этих групп.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What is the activation function in a neural network and what is its role?</div>
+        <div class="answer">A: The activation function in a neural network introduces non-linearity into the model,
+          allowing it to learn complex relationships in the data. Without activation functions, neural networks would
+          only be able to model linear relationships. Common activation functions include ReLU, sigmoid, and tanh, each
+          helping the network capture different types of patterns.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Что такое функция активации в нейронной сети и какова её роль?</div>
+        <div class="ru-answer">О: Функция активации в нейронной сети вносит нелинейность, позволяя модели изучать
+          сложные зависимости в данных. Без неё сеть могла бы моделировать только линейные связи. Популярные функции
+          активации: ReLU, сигмоида, tanh — каждая помогает сети выявлять разные типы закономерностей.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Describe the main stages of the machine learning process, starting with data
+          collection.</div>
+        <div class="answer">A: The main stages of the machine learning process are: (1) Data collection, where relevant
+          data is gathered; (2) Data preprocessing, which involves cleaning and transforming the data; (3) Model
+          training, where the algorithm learns from the data; (4) Model evaluation, where performance is assessed using
+          metrics; and (5) Deployment, where the trained model is used in real-world applications.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Опишите основные этапы процесса машинного обучения, начиная со сбора данных.</div>
+        <div class="ru-answer">О: Основные этапы машинного обучения: (1) сбор данных; (2) предобработка (очистка и
+          преобразование); (3) обучение модели; (4) оценка качества с помощью метрик; (5) внедрение модели в реальное
+          приложение.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What is overfitting in machine learning and how can it be dealt with?</div>
+        <div class="answer">A: Overfitting occurs when a machine learning model learns the training data too well,
+          including its noise and outliers, resulting in poor performance on new, unseen data. It can be addressed by
+          using techniques such as cross-validation, regularization, pruning, or by collecting more training data.
+          Simpler models are also less prone to overfitting.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Что такое переобучение в машинном обучении и как с ним бороться?</div>
+        <div class="ru-answer">О: Переобучение — это ситуация, когда модель слишком хорошо запоминает обучающие данные,
+          включая шум и выбросы, и плохо работает на новых данных. С этим борются с помощью кросс-валидации,
+          регуляризации, упрощения модели, увеличения объёма данных или обрезки (pruning).</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Explain the concept of "deep learning" and how it differs from classical machine
+          learning.</div>
+        <div class="answer">A: Deep learning is a subset of machine learning that uses artificial neural networks with
+          many layers (hence "deep") to automatically learn representations and features from large amounts of data.
+          Unlike classical machine learning, which often requires manual feature engineering, deep learning models can
+          extract complex patterns directly from raw data, such as images or text. Deep learning has enabled
+          breakthroughs in fields like speech recognition, image classification, and natural language processing.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Объясните концепцию «глубокого обучения» и чем оно отличается от классического
+          машинного обучения.</div>
+        <div class="ru-answer">О: Глубокое обучение — это разновидность машинного обучения, использующая искусственные
+          нейронные сети с большим числом слоёв («глубокие»). В отличие от классического машинного обучения, где часто
+          требуется ручная обработка признаков, глубокие модели сами извлекают сложные закономерности из исходных данных
+          (например, изображений или текста). Глубокое обучение позволило добиться прорыва в распознавании речи,
+          изображений и обработке языка.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Give an example of a neural network architecture used for image processing.</div>
+        <div class="answer">A: A common neural network architecture for image processing is the Convolutional Neural
+          Network (CNN). CNNs use convolutional layers to automatically detect spatial hierarchies of features in
+          images, such as edges, textures, and shapes. They are widely used in applications like facial recognition,
+          object detection, and medical image analysis.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Приведите пример архитектуры нейронной сети, используемой для обработки изображений.
+        </div>
+        <div class="ru-answer">О: Один из распространённых вариантов архитектуры для обработки изображений — сверточная
+          нейронная сеть (CNN). Такие сети используют сверточные слои для автоматического выявления иерархий признаков
+          на изображениях: краёв, текстур, форм. CNN широко применяются для распознавания лиц, объектов и в медицинской
+          диагностике.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What is Natural language processing (NLP)? Give examples of NLP tasks.</div>
+        <div class="answer">A: Natural Language Processing (NLP) is a field of AI that focuses on enabling computers to
+          understand, interpret, and generate human language. NLP tasks include machine translation (e.g., Google
+          Translate), sentiment analysis (detecting positive or negative opinions in text), text summarization, and
+          chatbots that can converse with users.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Что такое обработка естественного языка (NLP)? Приведите примеры задач NLP.</div>
+        <div class="ru-answer">О: Обработка естественного языка (NLP) — это область ИИ, направленная на то, чтобы
+          компьютеры могли понимать, интерпретировать и генерировать человеческий язык. Примеры задач: машинный перевод
+          (например, Google Translate), анализ тональности (определение позитивных/негативных отзывов), автоматическое
+          резюмирование текстов, чат-боты.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Explain how a simple classification algorithm works, for example, the nearest neighbors
+          (k-NN) method.</div>
+        <div class="answer">A: The k-Nearest Neighbors (k-NN) algorithm classifies a new data point by finding the k
+          closest points in the training data and assigning the most common class among them. For example, to classify a
+          new email as spam or not spam, k-NN looks at the most similar emails in the dataset and uses their labels to
+          make a decision. The algorithm is simple, intuitive, and works well for small datasets.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Объясните, как работает простой алгоритм классификации, например, метод ближайших
+          соседей (k-NN).</div>
+        <div class="ru-answer">О: Алгоритм k-ближайших соседей (k-NN) классифицирует новый объект, находя k ближайших
+          точек в обучающей выборке и присваивая наиболее частый класс среди них. Например, чтобы определить, является
+          ли письмо спамом, k-NN ищет похожие письма и использует их метки для решения. Алгоритм прост, интуитивен и
+          хорошо работает на небольших данных.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What are the main ethical issues related to the development and application of
+          artificial intelligence?</div>
+        <div class="answer">A: Key ethical issues in AI include bias and discrimination (when models reflect or amplify
+          societal biases), privacy concerns (due to data collection and surveillance), job displacement (as automation
+          replaces human labor), and accountability (who is responsible for AI decisions). Addressing these issues is
+          crucial for building fair and trustworthy AI systems.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Каковы основные этические проблемы, связанные с развитием и применением
+          искусственного интеллекта?</div>
+        <div class="ru-answer">О: Ключевые этические проблемы ИИ: предвзятость и дискриминация (когда модели отражают
+          или усиливают социальные стереотипы), вопросы приватности (из-за сбора данных и слежки), вытеснение рабочих
+          мест (автоматизация заменяет людей), ответственность (кто отвечает за решения ИИ). Решение этих вопросов важно
+          для создания справедливых и надёжных систем.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What is an intelligent agent? Describe its main characteristics and surroundings.</div>
+        <div class="answer">A: An intelligent agent is an autonomous entity that perceives its environment through
+          sensors, makes decisions based on its perceptions and goals, and acts upon the environment using actuators.
+          Key characteristics include autonomy, adaptability, and goal-oriented behavior. Examples include robots,
+          virtual assistants, and self-driving cars.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Что такое интеллектуальный агент? Опишите его основные характеристики и окружение.
+        </div>
+        <div class="ru-answer">О: Интеллектуальный агент — это автономная система, которая воспринимает окружающую среду
+          с помощью сенсоров, принимает решения на основе восприятия и целей, и воздействует на среду с помощью
+          исполнительных устройств. Ключевые характеристики: автономность, адаптивность, целенаправленность. Примеры:
+          роботы, виртуальные ассистенты, беспилотные автомобили.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Explain the concept of "backpropagation" in neural network training.</div>
+        <div class="answer">A: Backpropagation is a training algorithm used in neural networks to minimize the error
+          between predicted and actual outputs. It works by computing the gradient of the loss function with respect to
+          each weight in the network, then updating the weights in the direction that reduces the error. This process is
+          repeated iteratively, allowing the network to learn from data.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Объясните концепцию «обратного распространения ошибки» (backpropagation) при
+          обучении нейронных сетей.</div>
+        <div class="ru-answer">О: Обратное распространение ошибки — это алгоритм обучения нейронных сетей,
+          минимизирующий ошибку между предсказанием и реальным ответом. Он вычисляет градиент функции потерь по каждому
+          весу и обновляет веса в направлении уменьшения ошибки. Этот процесс повторяется многократно, позволяя сети
+          учиться на данных.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What are the main advantages and disadvantages of using machine learning compared to
+          rule-based programming?</div>
+        <div class="answer">A: Machine learning can automatically learn complex patterns from data and adapt to new
+          situations, making it suitable for tasks where explicit rules are hard to define. However, ML models can be
+          less interpretable and require large amounts of data. Rule-based systems are transparent and easy to debug but
+          struggle with complex or changing environments.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Назовите основные плюсы и минусы машинного обучения по сравнению с программированием
+          на правилах.</div>
+        <div class="ru-answer">О: Машинное обучение позволяет автоматически выявлять сложные закономерности в данных и
+          адаптироваться к новым ситуациям, что полезно там, где сложно явно задать правила. Минусы: модели могут быть
+          менее понятны и требуют много данных. Системы на правилах прозрачны и легко отлаживаются, но плохо работают в
+          сложных или меняющихся условиях.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Describe the decision-making process in logic-based artificial intelligence systems.
+        </div>
+        <div class="answer">A: Logic-based AI systems use formal logic (such as propositional or predicate logic) to
+          represent knowledge and make decisions. They apply inference rules to known facts to derive new conclusions.
+          For example, an expert system in medicine might use logical rules to diagnose diseases based on symptoms
+          provided by a patient.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Опишите процесс принятия решений в логико-ориентированных системах искусственного
+          интеллекта.</div>
+        <div class="ru-answer">О: Логические ИИ-системы используют формальную логику (например, высказываний или
+          предикатов) для представления знаний и принятия решений. Они применяют правила вывода к известным фактам для
+          получения новых заключений. Например, экспертная система в медицине может использовать логические правила для
+          постановки диагноза по симптомам пациента.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What are recommendation systems and what are the main approaches used to build them?
+        </div>
+        <div class="answer">A: Recommendation systems are algorithms designed to suggest relevant items to users, such
+          as movies, products, or articles. The main approaches are collaborative filtering (using user-item
+          interactions), content-based filtering (using item features), and hybrid methods that combine both. Examples
+          include Netflix movie recommendations and Amazon product suggestions.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Что такое рекомендательные системы и какие основные подходы используются для их
+          построения?</div>
+        <div class="ru-answer">О: Рекомендательные системы — это алгоритмы, предлагающие пользователям релевантные
+          объекты (фильмы, товары, статьи). Основные подходы: коллаборативная фильтрация (учёт взаимодействий
+          пользователей и объектов), контентная фильтрация (учёт характеристик объектов) и гибридные методы. Примеры:
+          рекомендации фильмов на Netflix, товаров на Amazon.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Explain the concept of "computer vision" and give examples of its application.</div>
+        <div class="answer">A: Computer vision is a field of AI that enables computers to interpret and understand
+          visual information from the world, such as images and videos. Applications include facial recognition,
+          autonomous vehicles, medical image analysis, and quality control in manufacturing.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Объясните понятие «компьютерное зрение» и приведите примеры его применения.</div>
+        <div class="ru-answer">О: Компьютерное зрение — это область ИИ, позволяющая компьютерам интерпретировать и
+          понимать визуальную информацию (изображения, видео). Применения: распознавание лиц, автономные автомобили,
+          анализ медицинских снимков, контроль качества на производстве.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: What is the importance of evaluating the performance of machine learning models? Name
+          the main evaluation metrics for classification tasks.</div>
+        <div class="answer">A: Evaluating machine learning models is crucial to ensure they make accurate and reliable
+          predictions. For classification tasks, common metrics include accuracy, precision, recall, F1-score, and
+          ROC-AUC. These metrics help assess how well the model distinguishes between classes and generalizes to new
+          data.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Почему важно оценивать качество моделей машинного обучения? Назовите основные
+          метрики для задач классификации.</div>
+        <div class="ru-answer">О: Оценка моделей машинного обучения необходима для проверки их точности и надёжности.
+          Для задач классификации используют метрики: точность (accuracy), полнота (recall), точность (precision),
+          F1-мера, ROC-AUC. Они позволяют понять, насколько хорошо модель различает классы и работает на новых данных.
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Compare and analyze different reinforcement learning algorithms (for example,
+          Q-learning, SARSA). What are their key differences and areas of application?</div>
+        <div class="answer">A: Q-learning and SARSA are both reinforcement learning algorithms. Q-learning is an
+          off-policy method, meaning it learns the optimal policy independently of the agent's actions, while SARSA is
+          on-policy and updates values based on the actions actually taken. Q-learning often converges faster, but SARSA
+          can be safer in some environments. Both are used in robotics, game AI, and autonomous systems.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Сравните и проанализируйте различные алгоритмы обучения с подкреплением (например,
+          Q-learning, SARSA). В чём их ключевые отличия и области применения?</div>
+        <div class="ru-answer">О: Q-learning и SARSA — алгоритмы обучения с подкреплением. Q-learning — off-policy
+          (учится независимо от действий агента), а SARSA — on-policy (учитывает реальные действия). Q-learning часто
+          сходится быстрее, но SARSA может быть безопаснее в некоторых средах. Оба применяются в робототехнике, игровых
+          ИИ и автономных системах.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Develop a hypothetical scenario in which the use of deep generative models (for
+          example, GAN) can lead to significant ethical problems. Justify your answer.</div>
+        <div class="answer">A: A scenario: GANs are used to generate realistic fake videos (deepfakes) of public
+          figures. These videos could be used to spread misinformation, manipulate public opinion, or damage
+          reputations. The ethical problem is the potential for harm, loss of trust, and difficulty in distinguishing
+          real from fake content.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Придумайте гипотетическую ситуацию, в которой использование глубоких генеративных
+          моделей (например, GAN) приведёт к серьёзным этическим проблемам. Обоснуйте ответ.</div>
+        <div class="ru-answer">О: Сценарий: GAN используются для создания реалистичных фейковых видео (deepfake) с
+          известными людьми. Такие видео могут распространять дезинформацию, манипулировать мнением или портить
+          репутацию. Этическая проблема — возможный вред, потеря доверия и сложность отличия подделки от реальности.
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Explain the mathematical basis of the convolutional neural network (CNN) in relation to
+          the image recognition problem. Describe the role of convolutional layers, pooling layers, and fully connected
+          layers.</div>
+        <div class="answer">A: CNNs use convolutional layers to apply filters that detect local patterns in images,
+          pooling layers to reduce spatial dimensions and retain important features, and fully connected layers to make
+          final predictions. Mathematically, convolution is a weighted sum of input values within a local region,
+          enabling the network to learn spatial hierarchies of features for image recognition.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Объясните математическую основу сверточных нейронных сетей (CNN) применительно к
+          задаче распознавания изображений. Опишите роль сверточных, pooling- и полносвязных слоёв.</div>
+        <div class="ru-answer">О: В CNN сверточные слои применяют фильтры для выявления локальных признаков,
+          pooling-слои уменьшают размерность и сохраняют важные признаки, а полносвязные слои делают итоговые
+          предсказания. Математически свёртка — это взвешенная сумма входных значений в локальной области, что позволяет
+          сети изучать иерархии признаков для распознавания изображений.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Analyze the limitations of classical machine learning methods when working with
+          sequential data. How do recurrent neural networks (RNNs) solve these problems? Describe the architecture and
+          how the basic RNN works.</div>
+        <div class="answer">A: Classical ML methods struggle with sequential data because they assume independence
+          between samples. RNNs address this by maintaining a hidden state that captures information from previous
+          steps, allowing them to model dependencies over time. Basic RNNs have loops that pass information from one
+          time step to the next, making them suitable for tasks like language modeling and time series prediction.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Проанализируйте ограничения классических методов машинного обучения при работе с
+          последовательными данными. Как рекуррентные нейронные сети (RNN) решают эти проблемы? Опишите архитектуру и
+          принцип работы базовой RNN.</div>
+        <div class="ru-answer">О: Классические методы плохо работают с последовательными данными, так как предполагают
+          независимость примеров. RNN решают это, сохраняя скрытое состояние, в котором накапливается информация о
+          предыдущих шагах, что позволяет моделировать зависимости во времени. В базовой RNN есть петли, передающие
+          информацию от шага к шагу, что подходит для языкового моделирования и прогнозирования временных рядов.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Discuss the problem of black box interpretability in complex machine learning models.
+          What methods can be used to increase transparency and explainability of AI solutions?</div>
+        <div class="answer">A: Black box models, like deep neural networks, are difficult to interpret. Methods to
+          increase transparency include feature importance analysis, visualization of learned representations, LIME and
+          SHAP for local explanations, and using simpler surrogate models. Improving interpretability helps build trust
+          and diagnose errors in AI systems.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Обсудите проблему интерпретируемости «чёрного ящика» в сложных моделях машинного
+          обучения. Какие методы позволяют повысить прозрачность и объяснимость ИИ-решений?</div>
+        <div class="ru-answer">О: Глубокие нейросети и другие сложные модели трудно интерпретировать. Для повышения
+          прозрачности используют анализ важности признаков, визуализацию изученных представлений, методы LIME и SHAP
+          для локальных объяснений, а также простые суррогатные модели. Интерпретируемость помогает доверять ИИ и
+          находить ошибки.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Propose the architecture of a hybrid intelligent system that combines symbolic and
+          connectionist approaches to solve a complex problem (for example, automated diagnosis of diseases). Justify
+          the choice of components.</div>
+        <div class="answer">A: A hybrid system could use a neural network to process raw data (e.g., medical images) and
+          extract features, then pass these features to a symbolic reasoning module (e.g., rule-based expert system) for
+          final diagnosis. The neural network handles perception, while the symbolic system provides explainable
+          decision-making. This combination leverages the strengths of both approaches.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Предложите архитектуру гибридной интеллектуальной системы, сочетающей символические
+          и коннекционистские подходы для решения сложной задачи (например, автоматизированная диагностика заболеваний).
+          Обоснуйте выбор компонентов.</div>
+        <div class="ru-answer">О: Гибридная система может использовать нейросеть для обработки исходных данных
+          (например, медицинских изображений) и выделения признаков, а затем передавать их в символический модуль
+          (экспертная система на правилах) для постановки диагноза. Нейросеть отвечает за восприятие, а символическая
+          система — за объяснимое принятие решений. Такой подход сочетает сильные стороны обоих методов.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Explain the concept of a "semantic network" and explain how it can be used to represent
+          knowledge and perform logical inference. Give examples.</div>
+        <div class="answer">A: A semantic network is a graphical representation of knowledge where concepts are nodes
+          and relationships are edges. It is used to model how different concepts are related and to perform logical
+          inference by traversing the network. For example, in a semantic network, "cat" might be linked to "animal"
+          (is-a relationship), and "cat" to "fur" (has-property). Such networks are used in natural language
+          understanding and expert systems.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Объясните понятие «семантическая сеть» и как она используется для представления
+          знаний и логического вывода. Приведите примеры.</div>
+        <div class="ru-answer">О: Семантическая сеть — это графовое представление знаний, где вершины — понятия, а рёбра
+          — отношения между ними. Она позволяет моделировать связи между понятиями и выполнять логический вывод путём
+          обхода сети. Например, «кот» связан с «животное» (отношение «является»), а также с «шерсть» (свойство). Такие
+          сети применяются в обработке языка и экспертных системах.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Analyze the problem of the "curse of dimensionality" in machine learning. What data
+          dimensionality reduction methods do you know and how do they help to cope with this problem?</div>
+        <div class="answer">A: The "curse of dimensionality" refers to the challenges that arise when working with
+          high-dimensional data, such as increased computational cost and risk of overfitting. Dimensionality reduction
+          methods like Principal Component Analysis (PCA), t-SNE, and autoencoders help by reducing the number of
+          features while preserving important information, making models more efficient and less prone to overfitting.
+        </div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Проанализируйте проблему «проклятия размерности» в машинном обучении. Какие методы
+          уменьшения размерности данных вы знаете и как они помогают?</div>
+        <div class="ru-answer">О: «Проклятие размерности» — это трудности при работе с данными высокой размерности: рост
+          вычислительных затрат, переобучение. Методы уменьшения размерности, такие как PCA, t-SNE, автоэнкодеры,
+          позволяют сократить число признаков, сохраняя важную информацию. Это делает модели эффективнее и снижает риск
+          переобучения.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Explain how the attention mechanism works in the context of neural networks for natural
+          language processing. How does it improve the performance of models?</div>
+        <div class="answer">A: The attention mechanism allows neural networks to focus on relevant parts of the input
+          sequence when making predictions. In NLP, attention helps models weigh the importance of different words,
+          improving translation, summarization, and question answering. It enables the model to capture long-range
+          dependencies and context more effectively than traditional architectures.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Объясните, как работает механизм внимания в нейронных сетях для обработки
+          естественного языка. Как он улучшает работу моделей?</div>
+        <div class="ru-answer">О: Механизм внимания позволяет нейросетям фокусироваться на важных частях входной
+          последовательности при предсказаниях. В NLP внимание помогает учитывать значимость разных слов, что улучшает
+          перевод, резюмирование, ответы на вопросы. Это позволяет лучше учитывать контекст и дальние зависимости, чем
+          классические архитектуры.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Compare different approaches to solving the problem of machine translation (for
+          example, statistical machine translation, neural machine translation). Explain the advantages and
+          disadvantages of each approach.</div>
+        <div class="answer">A: Statistical machine translation (SMT) uses probabilistic models based on bilingual text
+          corpora, while neural machine translation (NMT) uses deep neural networks to learn end-to-end mappings. NMT
+          generally produces more fluent and accurate translations but requires more data and computational resources.
+          SMT is more interpretable but less effective for complex language patterns.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Сравните различные подходы к машинному переводу (например, статистический и
+          нейронный). Объясните плюсы и минусы каждого.</div>
+        <div class="ru-answer">О: Статистический машинный перевод (SMT) использует вероятностные модели на основе
+          параллельных корпусов, а нейронный (NMT) — глубокие нейросети для сквозного обучения. NMT обычно даёт более
+          точные и естественные переводы, но требует больше данных и вычислений. SMT проще интерпретировать, но хуже
+          справляется со сложными языковыми структурами.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Develop the concept of an intelligent agent capable of autonomously exploring a new
+          unknown environment. What key abilities and algorithms will he need?</div>
+        <div class="answer">A: Such an agent needs abilities like perception (sensing the environment), mapping
+          (building a model of the environment), planning (deciding actions), and learning from experience. Algorithms
+          include SLAM (simultaneous localization and mapping), reinforcement learning, and path planning (e.g., A*).
+          These enable the agent to explore, adapt, and achieve goals in unknown settings.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Разработайте концепцию интеллектуального агента, способного автономно исследовать
+          новую неизвестную среду. Какие ключевые способности и алгоритмы ему нужны?</div>
+        <div class="ru-answer">О: Такому агенту нужны: восприятие (сенсоры), построение карты среды, планирование
+          действий и обучение на опыте. Алгоритмы: SLAM (одновременная локализация и построение карты), обучение с
+          подкреплением, планирование пути (например, A*). Это позволяет агенту исследовать, адаптироваться и достигать
+          целей в новых условиях.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Discuss the potential risks and benefits of widespread adoption of autonomous
+          decision-making systems (e.g. self-driving cars) from the point of view of security, economics and society.
+        </div>
+        <div class="answer">A: Benefits include increased efficiency, safety, and convenience. Risks involve security
+          vulnerabilities (hacking), job displacement, ethical dilemmas (decision-making in critical situations), and
+          societal impacts (changes in transportation, insurance, and law). Careful regulation and oversight are needed
+          to maximize benefits and minimize risks.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Обсудите возможные риски и преимущества массового внедрения автономных систем
+          принятия решений (например, беспилотных автомобилей) с точки зрения безопасности, экономики и общества.</div>
+        <div class="ru-answer">О: Преимущества: рост эффективности, безопасности, удобства. Риски: уязвимости (взлом),
+          вытеснение рабочих мест, этические дилеммы (решения в критических ситуациях), влияние на общество (транспорт,
+          страхование, законы). Необходимы регулирование и контроль для максимизации пользы и снижения рисков.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Explain how graph neural networks (GNNs) work and in what tasks they can be effectively
+          applied.</div>
+        <div class="answer">A: GNNs are neural networks designed to operate on graph-structured data. They aggregate
+          information from neighboring nodes to learn node, edge, or graph-level representations. GNNs are effective in
+          tasks like social network analysis, molecular property prediction, and recommendation systems where
+          relationships between entities are important.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Объясните, как работают графовые нейронные сети (GNN) и для каких задач они
+          эффективны.</div>
+        <div class="ru-answer">О: Графовые нейронные сети (GNN) работают с графовыми структурами, агрегируя информацию
+          от соседних вершин для обучения представлений узлов, рёбер или всего графа. GNN эффективны для анализа
+          социальных сетей, предсказания свойств молекул, рекомендательных систем — там, где важны связи между
+          объектами.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Explain the concept of "federated learning" and explain its advantages and difficulties
+          in training models on decentralized data.</div>
+        <div class="answer">A: Federated learning is a technique where models are trained across multiple devices or
+          servers holding local data samples, without exchanging the data itself. Advantages include improved privacy
+          and reduced data transfer. Challenges involve communication overhead, data heterogeneity, and ensuring model
+          convergence across distributed nodes.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Объясните концепцию «федеративного обучения» и его плюсы и сложности при обучении на
+          распределённых данных.</div>
+        <div class="ru-answer">О: Федеративное обучение — это подход, при котором модели обучаются на разных устройствах
+          с локальными данными без передачи самих данных. Плюсы: приватность, снижение трафика. Сложности: высокая
+          нагрузка на связь, разнородность данных, необходимость согласованного обучения на всех узлах.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Analyze the bias problem in machine learning datasets and its impact on the fairness
+          and ethics of AI systems. Suggest ways to detect and mitigate bias.</div>
+        <div class="answer">A: Bias in datasets can lead to unfair or discriminatory AI systems. It affects model
+          predictions and can reinforce existing inequalities. Detection methods include statistical analysis and
+          fairness metrics. Mitigation strategies involve balanced data collection, re-sampling, algorithmic
+          adjustments, and transparency in model development.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Проанализируйте проблему смещения (bias) в датасетах для машинного обучения и его
+          влияние на справедливость и этику ИИ. Предложите способы обнаружения и устранения смещения.</div>
+        <div class="ru-answer">О: Смещение в данных может привести к несправедливым или дискриминационным ИИ-системам,
+          усиливать неравенство. Методы обнаружения: статистический анализ, метрики справедливости. Для устранения:
+          балансировка данных, пересэмплирование, корректировка алгоритмов, прозрачность разработки моделей.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Describe the architecture and operating principle of Transformer networks. What are
+          their key advantages over recurrent networks, especially in NLP tasks?</div>
+        <div class="answer">A: Transformer networks use self-attention mechanisms to process all elements of a sequence
+          in parallel, rather than sequentially as in RNNs. This allows for better modeling of long-range dependencies
+          and faster training. Transformers have become the standard in NLP due to their scalability and superior
+          performance in tasks like translation and text generation.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Опишите архитектуру и принцип работы сетей Transformer. Каковы их преимущества по
+          сравнению с рекуррентными сетями, особенно в NLP?</div>
+        <div class="ru-answer">О: Сети Transformer используют механизм самовнимания для параллельной обработки всех
+          элементов последовательности, в отличие от RNN, где обработка идёт поэтапно. Это позволяет лучше учитывать
+          дальние зависимости и ускоряет обучение. Transformers стали стандартом в NLP благодаря масштабируемости и
+          высокой эффективности в переводе, генерации текста и других задачах.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Explore current trends in artificial intelligence, such as self-supervised learning or
+          meta-learning. Explain their essence and potential impact on the development of AI.</div>
+        <div class="answer">A: Current trends include self-supervised learning, where models learn from unlabeled data
+          by generating their own supervision signals, and meta-learning, which focuses on learning how to learn new
+          tasks quickly. These approaches improve data efficiency, adaptability, and generalization, potentially
+          accelerating AI development and enabling more robust, flexible systems.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Изучите современные тренды в искусственном интеллекте, такие как обучение с
+          самоконтролем или мета-обучение. Объясните их суть и возможное влияние на развитие ИИ.</div>
+        <div class="ru-answer">О: Современные тренды включают обучение с самоконтролем (self-supervised), где модели
+          учатся на неразмеченных данных, создавая сигналы для обучения самостоятельно, и мета-обучение, направленное на
+          быстрое освоение новых задач. Эти подходы повышают эффективность использования данных, адаптивность и
+          обобщаемость, что ускоряет развитие ИИ и делает системы более гибкими.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Propose a research plan to assess the robustness of the machine learning model to
+          adversarial attacks. What metrics and methods would you use?</div>
+        <div class="answer">A: The plan should include generating adversarial examples, evaluating model performance
+          under attack, and measuring robustness using metrics like accuracy drop, adversarial success rate, and
+          robustness curves. Methods include adversarial training, input preprocessing, and model regularization. The
+          goal is to identify vulnerabilities and improve model resilience.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Предложите план исследования для оценки устойчивости модели машинного обучения к
+          атакам с враждебными примерами. Какие метрики и методы вы бы использовали?</div>
+        <div class="ru-answer">О: План должен включать генерацию враждебных примеров, оценку работы модели под атакой и
+          измерение устойчивости по метрикам: падение точности, доля успешных атак, кривые устойчивости. Методы:
+          обучение с враждебными примерами, предобработка входных данных, регуляризация модели. Цель — выявить
+          уязвимости и повысить устойчивость модели.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <!-- Далее идут практические задания (P) и их переводы -->
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement Breadth-First Search (BFS) and Depth-First Search (DFS) for pathfinding in a
+          graph.</div>
+        <div class="answer">A: Write two functions: one for BFS, which explores neighbors level by level using a queue,
+          and one for DFS, which explores as far as possible along each branch before backtracking, using a stack or
+          recursion. Both algorithms return the path from start to goal if it exists.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте поиск в ширину (BFS) и поиск в глубину (DFS) для поиска пути в графе.
+        </div>
+        <div class="ru-answer">О: Напишите две функции: одна для BFS (обходит соседей по уровням с помощью очереди),
+          другая для DFS (идёт по ветви до конца, затем возвращается назад, используя стек или рекурсию). Оба алгоритма
+          возвращают путь от старта к цели, если он существует.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Write a program that solves a maze using the A* algorithm.</div>
+        <div class="answer">A: Implement the A* algorithm, which uses a priority queue and a heuristic (such as
+          Manhattan distance) to efficiently find the shortest path from the maze's start to finish. The program should
+          return the path or indicate if no path exists.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Напишите программу, решающую лабиринт с помощью алгоритма A*.</div>
+        <div class="ru-answer">О: Реализуйте алгоритм A*, который использует приоритетную очередь и эвристику (например,
+          манхэттенское расстояние) для поиска кратчайшего пути от старта до финиша. Программа должна возвращать путь
+          или сообщать, если пути нет.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Develop a simple rule-based expert system.</div>
+        <div class="answer">A: Create a system that uses a set of IF-THEN rules to make decisions based on user input.
+          For example, a medical expert system might ask about symptoms and use rules to suggest possible diagnoses.
+        </div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Разработайте простую экспертную систему на правилах.</div>
+        <div class="ru-answer">О: Создайте систему, использующую набор правил IF-THEN для принятия решений на основе
+          ввода пользователя. Например, медицинская экспертная система может опрашивать симптомы и по правилам
+          предлагать диагнозы.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement a logical inference system using the resolution method.</div>
+        <div class="answer">A: Build a system that represents knowledge as logical clauses and applies the resolution
+          rule to infer new facts or check if a statement is entailed. This is commonly used in automated theorem
+          proving.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте систему логического вывода с использованием метода резолюций.</div>
+        <div class="ru-answer">О: Постройте систему, представляющую знания в виде логических клауз и применяющую правило
+          резолюций для вывода новых фактов или проверки следования утверждения. Такой подход используется в
+          автоматическом доказательстве теорем.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Write a program that classifies AI tasks (e.g., classification, regression,
+          clustering).</div>
+        <div class="answer">A: Create a program that takes a task description and assigns it to a category:
+          classification (predicting categories), regression (predicting values), or clustering (grouping similar
+          items). Use keywords or simple rules for assignment.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Напишите программу, классифицирующую задачи ИИ (например, классификация, регрессия,
+          кластеризация).</div>
+        <div class="ru-answer">О: Создайте программу, которая принимает описание задачи и относит её к категории:
+          классификация (предсказание классов), регрессия (предсказание чисел), кластеризация (группировка похожих
+          объектов). Для этого можно использовать ключевые слова или простые правила.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement a constraint satisfaction problem (CSP) solver.</div>
+        <div class="answer">A: Write a solver that assigns values to variables while satisfying a set of constraints.
+          Use backtracking search and constraint propagation to efficiently find solutions. Example: solving Sudoku or
+          map coloring problems.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте решатель задачи удовлетворения ограничений (CSP).</div>
+        <div class="ru-answer">О: Напишите решатель, который присваивает значения переменным с учётом ограничений.
+          Используйте поиск с возвратом и распространение ограничений для эффективного поиска решений. Пример: решение
+          судоку или задачи раскраски карты.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Create a chatbot using decision trees.</div>
+        <div class="answer">A: Design a chatbot that uses a decision tree to guide conversations. Each node represents a
+          question or response, and branches depend on user input. The tree structure allows the chatbot to handle
+          different scenarios and provide relevant answers.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Создайте чат-бота на основе дерева решений.</div>
+        <div class="ru-answer">О: Разработайте чат-бота, использующего дерево решений для ведения диалога. Каждый узел —
+          это вопрос или ответ, а ветви зависят от ответа пользователя. Такая структура позволяет боту обрабатывать
+          разные сценарии и давать релевантные ответы.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Develop a game-playing agent for Tic-Tac-Toe using the Minimax algorithm.</div>
+        <div class="answer">A: Implement the Minimax algorithm, which recursively evaluates possible moves to choose the
+          optimal strategy for both players. The agent should select moves that maximize its chances of winning and
+          minimize the opponent's chances.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Разработайте игрового агента для крестиков-ноликов с использованием алгоритма
+          Минимакс.</div>
+        <div class="ru-answer">О: Реализуйте алгоритм Минимакс, который рекурсивно оценивает возможные ходы и выбирает
+          оптимальную стратегию для обоих игроков. Агент должен выбирать ходы, максимизирующие его шансы на победу и
+          минимизирующие шансы соперника.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement the Monte Carlo Tree Search (MCTS) algorithm for game strategy.</div>
+        <div class="answer">A: Implement MCTS, which builds a search tree by simulating many random playouts from the
+          current state. The algorithm selects moves based on the most promising outcomes, balancing exploration and
+          exploitation. MCTS is widely used in games like Go and Chess.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте алгоритм Монте-Карло Tree Search (MCTS) для игровой стратегии.</div>
+        <div class="ru-answer">О: Реализуйте MCTS, который строит дерево поиска, симулируя множество случайных партий из
+          текущего состояния. Алгоритм выбирает ходы на основе наиболее перспективных исходов, балансируя исследование и
+          использование. MCTS широко применяется в играх, таких как Го и шахматы.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Design an AI system capable of generating optimal schedules for a set of tasks.</div>
+        <div class="answer">A: Build a system that models tasks, constraints, and resources, then uses optimization
+          algorithms (e.g., constraint programming, genetic algorithms) to find the best schedule. The system should
+          handle conflicts and maximize efficiency.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Спроектируйте ИИ-систему, способную генерировать оптимальные расписания для набора
+          задач.</div>
+        <div class="ru-answer">О: Постройте систему, моделирующую задачи, ограничения и ресурсы, и применяющую алгоритмы
+          оптимизации (например, constraint programming, генетические алгоритмы) для поиска лучшего расписания. Система
+          должна учитывать конфликты и максимизировать эффективность.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Train a linear regression model and evaluate its performance.</div>
+        <div class="answer">A: Use a dataset with input features and target values. Fit a linear regression model, then
+          evaluate its performance using metrics like mean squared error (MSE) or R-squared. Visualize predictions
+          versus actual values to assess fit.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Обучите модель линейной регрессии и оцените её качество.</div>
+        <div class="ru-answer">О: Используйте набор данных с признаками и целевыми значениями. Обучите модель линейной
+          регрессии, затем оцените её качество по метрикам: среднеквадратичная ошибка (MSE), коэффициент детерминации
+          (R^2). Визуализируйте предсказания и реальные значения для оценки качества.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Train and compare SVM and Random Forest models on the same dataset.</div>
+        <div class="answer">A: Split the dataset into training and test sets. Train both SVM and Random Forest models,
+          then compare their performance using accuracy, precision, recall, or other relevant metrics. Analyze which
+          model performs better and why.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Обучите и сравните модели SVM и Random Forest на одном наборе данных.</div>
+        <div class="ru-answer">О: Разделите данные на обучающую и тестовую выборки. Обучите SVM и Random Forest,
+          сравните их по точности, полноте, F1 и другим метрикам. Проанализируйте, какая модель лучше и почему.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement gradient descent for loss minimization.</div>
+        <div class="answer">A: Write a function that iteratively updates model parameters in the direction of the
+          negative gradient of the loss function. Stop when the loss converges or after a set number of iterations. This
+          is the core optimization method in many ML algorithms.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте градиентный спуск для минимизации функции потерь.</div>
+        <div class="ru-answer">О: Напишите функцию, которая итеративно обновляет параметры модели в направлении
+          отрицательного градиента функции потерь. Остановитесь при сходимости или после заданного числа итераций. Это
+          основной метод оптимизации во многих алгоритмах машинного обучения.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Write a script for automatic hyperparameter tuning in machine learning.</div>
+        <div class="answer">A: Create a script that tests different hyperparameter combinations (e.g., using grid search
+          or random search) and selects the best set based on validation performance. Automating this process helps find
+          optimal model settings efficiently.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Напишите скрипт для автоматического подбора гиперпараметров в машинном обучении.
+        </div>
+        <div class="ru-answer">О: Создайте скрипт, который перебирает различные комбинации гиперпараметров (например,
+          grid search или random search) и выбирает лучшие по результатам на валидации. Автоматизация ускоряет поиск
+          оптимальных настроек модели.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement the k-Nearest Neighbors (k-NN) algorithm from scratch.</div>
+        <div class="answer">A: Write a function that, for a new data point, computes distances to all training points,
+          selects the k closest, and assigns the most common class among them. This is a simple, non-parametric
+          classification method.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте алгоритм k-ближайших соседей (k-NN) с нуля.</div>
+        <div class="ru-answer">О: Напишите функцию, которая для нового объекта вычисляет расстояния до всех обучающих
+          примеров, выбирает k ближайших и присваивает наиболее частый класс. Это простой непараметрический метод
+          классификации.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Train a logistic regression model for binary classification.</div>
+        <div class="answer">A: Use a labeled dataset with two classes. Fit a logistic regression model to the data, then
+          evaluate its performance using metrics like accuracy, precision, recall, and ROC-AUC. Visualize the decision
+          boundary if possible.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Обучите модель логистической регрессии для бинарной классификации.</div>
+        <div class="ru-answer">О: Используйте размеченный набор данных с двумя классами. Обучите модель логистической
+          регрессии, затем оцените её по метрикам: точность, полнота, ROC-AUC. При возможности визуализируйте границу
+          решений.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement Principal Component Analysis (PCA) for dimensionality reduction.</div>
+        <div class="answer">A: Write a function that computes the covariance matrix of the data, finds its eigenvectors
+          and eigenvalues, and projects the data onto the top principal components. PCA reduces dimensionality while
+          preserving variance.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте метод главных компонент (PCA) для уменьшения размерности.</div>
+        <div class="ru-answer">О: Напишите функцию, вычисляющую ковариационную матрицу данных, находящую собственные
+          векторы и значения, и проецирующую данные на главные компоненты. PCA уменьшает размерность, сохраняя
+          дисперсию.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Compare different clustering algorithms (K-Means, DBSCAN, hierarchical clustering) on
+          the same dataset.</div>
+        <div class="answer">A: Apply K-Means, DBSCAN, and hierarchical clustering to the same dataset. Compare their
+          results using metrics like silhouette score or visual inspection. Analyze which algorithm works best for the
+          data's structure and why.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Сравните различные алгоритмы кластеризации (K-Means, DBSCAN, иерархическая
+          кластеризация) на одном наборе данных.</div>
+        <div class="ru-answer">О: Примените K-Means, DBSCAN и иерархическую кластеризацию к одному набору данных.
+          Сравните результаты по силуэту или визуально. Проанализируйте, какой алгоритм лучше подходит для структуры
+          данных и почему.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Develop a recommendation system using collaborative filtering.</div>
+        <div class="answer">A: Build a system that predicts user preferences based on similarities between users or
+          items. Use user-item interaction data to compute similarity scores and recommend items that similar users
+          liked. Matrix factorization is a common technique.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Разработайте рекомендательную систему на основе коллаборативной фильтрации.</div>
+        <div class="ru-answer">О: Постройте систему, предсказывающую предпочтения пользователя на основе схожести с
+          другими пользователями или объектами. Используйте данные о взаимодействиях для вычисления схожести и
+          рекомендаций. Часто применяют матричную факторизацию.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Create an anomaly detection system using machine learning methods.</div>
+        <div class="answer">A: Train a model (e.g., isolation forest, one-class SVM, or autoencoder) on normal data. Use
+          it to score new data points; those with low scores are flagged as anomalies. Evaluate using precision, recall,
+          and ROC curves.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Создайте систему обнаружения аномалий с помощью методов машинного обучения.</div>
+        <div class="ru-answer">О: Обучите модель (например, isolation forest, one-class SVM или автоэнкодер) на
+          нормальных данных. Для новых объектов вычисляйте аномальность; низкие значения — аномалии. Оцените по
+          точности, полноте, ROC-кривым.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Build and train a simple neural network using TensorFlow/PyTorch.</div>
+        <div class="answer">A: Use TensorFlow or PyTorch to define a neural network architecture (input, hidden, output
+          layers), specify a loss function and optimizer, and train the model on labeled data. Evaluate its performance
+          on a test set.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Постройте и обучите простую нейронную сеть с помощью TensorFlow или PyTorch.</div>
+        <div class="ru-answer">О: Используйте TensorFlow или PyTorch для описания архитектуры сети (вход, скрытые,
+          выход), задания функции потерь и оптимизатора, обучения на размеченных данных. Оцените качество на тестовой
+          выборке.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement a fully connected neural network from scratch using NumPy.</div>
+        <div class="answer">A: Write code to initialize weights, perform forward and backward propagation, and update
+          weights using gradient descent. Use NumPy for matrix operations. Test the network on a simple dataset like
+          MNIST or XOR.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте полносвязную нейронную сеть с нуля на NumPy.</div>
+        <div class="ru-answer">О: Напишите код для инициализации весов, прямого и обратного распространения, обновления
+          весов градиентным спуском. Используйте NumPy для матричных операций. Проверьте сеть на простом наборе данных
+          (например, MNIST или XOR).</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Train a Convolutional Neural Network (CNN) for image classification.</div>
+        <div class="answer">A: Use a labeled image dataset. Define a CNN architecture with convolutional, pooling, and
+          fully connected layers. Train the model, then evaluate its accuracy on a test set. Visualize learned filters
+          if possible.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Обучите сверточную нейронную сеть (CNN) для классификации изображений.</div>
+        <div class="ru-answer">О: Используйте размеченный набор изображений. Опишите архитектуру CNN (свёрточные,
+          pooling, полносвязные слои), обучите модель и оцените точность на тестовой выборке. При возможности
+          визуализируйте фильтры.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Develop an autoencoder for image compression.</div>
+        <div class="answer">A: Build a neural network with an encoder that compresses input images to a
+          lower-dimensional representation and a decoder that reconstructs the images. Train the model to minimize
+          reconstruction loss. Test compression and reconstruction quality.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Разработайте автоэнкодер для сжатия изображений.</div>
+        <div class="ru-answer">О: Постройте нейросеть с энкодером (сжимает изображение в компактное представление) и
+          декодером (восстанавливает изображение). Обучите модель минимизировать ошибку восстановления. Проверьте
+          качество сжатия и восстановления.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Train a Recurrent Neural Network (RNN) for time-series forecasting.</div>
+        <div class="answer">A: Use a time-series dataset. Define an RNN architecture (e.g., LSTM or GRU), train it to
+          predict future values based on past observations, and evaluate its forecasting accuracy using metrics like
+          RMSE or MAE.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Обучите рекуррентную нейронную сеть (RNN) для прогнозирования временных рядов.</div>
+        <div class="ru-answer">О: Используйте данные временного ряда. Опишите архитектуру RNN (например, LSTM или GRU),
+          обучите сеть предсказывать будущие значения по прошлым, оцените точность прогноза по RMSE или MAE.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement the attention mechanism in a natural language processing model.</div>
+        <div class="answer">A: Add an attention layer to your NLP model (e.g., in a sequence-to-sequence architecture).
+          The attention mechanism computes weights for input tokens, allowing the model to focus on relevant parts of
+          the input when generating each output token.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте механизм внимания в модели обработки естественного языка.</div>
+        <div class="ru-answer">О: Добавьте слой внимания в NLP-модель (например, seq2seq). Механизм внимания вычисляет
+          веса для входных токенов, позволяя модели фокусироваться на важных частях входа при генерации каждого
+          выходного токена.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Create a Generative Adversarial Network (GAN) for image generation.</div>
+        <div class="answer">A: Build a GAN with a generator that creates images from random noise and a discriminator
+          that distinguishes real from fake images. Train both networks in competition until the generator produces
+          realistic images. Evaluate with visual inspection and metrics like FID.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Создайте генеративно-состязательную сеть (GAN) для генерации изображений.</div>
+        <div class="ru-answer">О: Постройте GAN с генератором (создаёт изображения из шума) и дискриминатором (отличает
+          реальные изображения от сгенерированных). Обучайте обе сети в соревновании, пока генератор не начнёт создавать
+          реалистичные изображения. Оцените визуально и по метрикам (например, FID).</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Train a transformer model for text classification.</div>
+        <div class="answer">A: Use a labeled text dataset. Fine-tune a pre-trained transformer (e.g., BERT) or train
+          from scratch for classification. Evaluate performance using accuracy, F1-score, and confusion matrix.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Обучите трансформер-модель для классификации текста.</div>
+        <div class="ru-answer">О: Используйте размеченный текстовый датасет. Доводите дообучением предобученный
+          трансформер (например, BERT) или обучайте с нуля для задачи классификации. Оцените по accuracy, F1 и confusion
+          matrix.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement neural style transfer for image processing.</div>
+        <div class="answer">A: Use a pre-trained CNN to extract content and style features from two images. Optimize a
+          new image to match the content of one and the style of the other by minimizing a combined loss function.
+          Visualize the stylized result.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте перенос стиля с помощью нейросетей для обработки изображений.</div>
+        <div class="ru-answer">О: Используйте предобученную CNN для извлечения признаков контента и стиля из двух
+          изображений. Оптимизируйте новое изображение, чтобы оно сочетало контент одного и стиль другого, минимизируя
+          комбинированную функцию потерь. Визуализируйте результат.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Develop a fraud detection system using deep learning.</div>
+        <div class="answer">A: Collect a labeled dataset of transactions. Train a deep neural network to classify
+          transactions as fraudulent or legitimate. Use techniques like class balancing and regularization. Evaluate
+          with precision, recall, and ROC-AUC.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Разработайте систему обнаружения мошенничества с помощью глубокого обучения.</div>
+        <div class="ru-answer">О: Соберите размеченный датасет транзакций. Обучите глубокую нейросеть для классификации
+          транзакций на мошеннические и легитимные. Используйте балансировку классов и регуляризацию. Оцените по
+          precision, recall, ROC-AUC.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement a text processing pipeline, including tokenization, stemming, and
+          lemmatization.</div>
+        <div class="answer">A: Write a pipeline that splits text into tokens, applies stemming (reducing words to their
+          root form), and lemmatization (reducing words to their dictionary form). Use libraries like NLTK or spaCy for
+          implementation.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте пайплайн обработки текста: токенизация, стемминг, лемматизация.</div>
+        <div class="ru-answer">О: Напишите пайплайн, который разбивает текст на токены, применяет стемминг (сведение к
+          корню) и лемматизацию (сведение к словарной форме). Используйте библиотеки NLTK или spaCy.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Develop an automatic text summarization system.</div>
+        <div class="answer">A: Build a system that generates concise summaries of input text. Use extractive methods
+          (selecting key sentences) or abstractive methods (generating new sentences). Train and evaluate on benchmark
+          datasets.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Разработайте систему автоматического реферирования текста.</div>
+        <div class="ru-answer">О: Постройте систему, генерирующую краткие резюме текста. Используйте экстрактивные
+          методы (выбор ключевых предложений) или абстрактивные (генерация новых фраз). Обучайте и тестируйте на
+          стандартных датасетах.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Train a Word2Vec model for word vector representations.</div>
+        <div class="answer">A: Use a large text corpus to train a Word2Vec model (CBOW or Skip-gram). The model learns
+          vector representations for words that capture semantic relationships. Visualize embeddings with t-SNE or PCA.
+        </div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Обучите модель Word2Vec для векторных представлений слов.</div>
+        <div class="ru-answer">О: Используйте большой текстовый корпус для обучения Word2Vec (CBOW или Skip-gram).
+          Модель изучает векторные представления слов, отражающие семантические связи. Визуализируйте эмбеддинги с
+          помощью t-SNE или PCA.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement a chatbot using LSTM or a transformer-based model.</div>
+        <div class="answer">A: Build a chatbot that uses an LSTM or transformer architecture to generate responses.
+          Train the model on conversational data and evaluate its ability to produce coherent, contextually appropriate
+          replies.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте чат-бота на LSTM или трансформере.</div>
+        <div class="ru-answer">О: Постройте чат-бота, использующего LSTM или трансформер для генерации ответов. Обучите
+          модель на диалоговых данных и оцените её способность выдавать связные и уместные ответы.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Train a sentiment analysis model using deep learning.</div>
+        <div class="answer">A: Use a labeled dataset of text and sentiment labels. Train a deep neural network (e.g.,
+          CNN, LSTM, or transformer) to classify sentiment. Evaluate with accuracy, F1-score, and confusion matrix.
+        </div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Обучите модель анализа тональности текста с помощью глубокого обучения.</div>
+        <div class="ru-answer">О: Используйте размеченный датасет текстов с метками тональности. Обучите глубокую
+          нейросеть (CNN, LSTM или трансформер) для классификации тональности. Оцените по accuracy, F1 и confusion
+          matrix.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement a machine translation system based on sequence-to-sequence (seq2seq) models.
+        </div>
+        <div class="answer">A: Build a seq2seq model with encoder and decoder networks for translating text from one
+          language to another. Train on parallel corpora and evaluate translation quality using BLEU or similar metrics.
+        </div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте систему машинного перевода на основе seq2seq-моделей.</div>
+        <div class="ru-answer">О: Постройте seq2seq-модель с энкодером и декодером для перевода текста между языками.
+          Обучайте на параллельных корпусах, оценивайте качество перевода по BLEU или аналогичным метрикам.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Develop a spam detection system using NLP techniques.</div>
+        <div class="answer">A: Collect a dataset of messages labeled as spam or not spam. Extract features using NLP
+          methods (e.g., TF-IDF, word embeddings), train a classifier (e.g., logistic regression, SVM, or neural
+          network), and evaluate with precision, recall, and F1-score.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Разработайте систему обнаружения спама с помощью методов NLP.</div>
+        <div class="ru-answer">О: Соберите датасет сообщений с метками спам/не спам. Извлеките признаки с помощью NLP
+          (TF-IDF, эмбеддинги), обучите классификатор (логистическая регрессия, SVM или нейросеть), оцените по
+          precision, recall, F1.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Fine-tune a pre-trained BERT model for text classification.</div>
+        <div class="answer">A: Use a labeled text dataset. Load a pre-trained BERT model, add a classification head, and
+          fine-tune on your data. Evaluate with accuracy, F1-score, and confusion matrix.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Доводите дообучением предобученную модель BERT для классификации текста.</div>
+        <div class="ru-answer">О: Используйте размеченный текстовый датасет. Загрузите предобученную BERT, добавьте
+          классификационный слой и дообучите на своих данных. Оцените по accuracy, F1 и confusion matrix.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement a Named Entity Recognition (NER) model to extract named entities.</div>
+        <div class="answer">A: Train a model (e.g., CRF, LSTM, or transformer) on labeled text to identify and classify
+          named entities (persons, organizations, locations, etc.). Evaluate with precision, recall, and F1-score.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте модель выделения именованных сущностей (NER) для извлечения сущностей из
+          текста.</div>
+        <div class="ru-answer">О: Обучите модель (CRF, LSTM или трансформер) на размеченном тексте для выделения и
+          классификации сущностей (люди, организации, локации и др.). Оцените по precision, recall, F1.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Develop an AI-powered search engine that ranks documents based on relevance.</div>
+        <div class="answer">A: Build a search engine that indexes documents, extracts features (e.g., TF-IDF,
+          embeddings), and uses a ranking algorithm (e.g., BM25, neural ranker) to order results by relevance to the
+          query. Evaluate with metrics like MAP or NDCG.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Разработайте поисковую систему на ИИ, ранжирующую документы по релевантности.</div>
+        <div class="ru-answer">О: Постройте поисковик, индексирующий документы, извлекающий признаки (TF-IDF,
+          эмбеддинги) и использующий алгоритм ранжирования (BM25, нейросетевой ранжировщик) для сортировки по
+          релевантности. Оцените по MAP или NDCG.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement an image classification system using OpenCV and a pre-trained deep learning
+          model.</div>
+        <div class="answer">A: Use OpenCV to load and preprocess images. Load a pre-trained model (e.g., ResNet,
+          MobileNet), run inference on input images, and output predicted classes. Evaluate accuracy on a labeled test
+          set.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте систему классификации изображений с помощью OpenCV и предобученной
+          глубокой модели.</div>
+        <div class="ru-answer">О: Используйте OpenCV для загрузки и предобработки изображений. Загрузите предобученную
+          модель (например, ResNet, MobileNet), выполните инференс и выведите предсказанные классы. Оцените точность на
+          размеченной тестовой выборке.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Develop an object detection system using YOLO or Faster R-CNN.</div>
+        <div class="answer">A: Use a labeled dataset with bounding boxes. Train or fine-tune a YOLO or Faster R-CNN
+          model to detect and localize objects in images. Evaluate with mean Average Precision (mAP).</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Разработайте систему обнаружения объектов с помощью YOLO или Faster R-CNN.</div>
+        <div class="ru-answer">О: Используйте размеченный датасет с боксами. Обучите или дообучите YOLO или Faster R-CNN
+          для обнаружения и локализации объектов на изображениях. Оцените по mAP.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Train a facial recognition model using deep learning.</div>
+        <div class="answer">A: Collect a dataset of labeled face images. Train a deep neural network (e.g., CNN,
+          FaceNet) to extract facial features and compare embeddings for recognition. Evaluate with accuracy and
+          ROC-AUC.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Обучите модель распознавания лиц с помощью глубокого обучения.</div>
+        <div class="ru-answer">О: Соберите датасет с размеченными лицами. Обучите глубокую нейросеть (CNN, FaceNet) для
+          извлечения признаков и сравнения эмбеддингов. Оцените по accuracy и ROC-AUC.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="qa-row">
+      <div class="qa-col left">
+        <div class="question">Q: Implement a handwritten text recognition system using CNN.</div>
+        <div class="answer">A: Use a dataset of handwritten text images. Train a CNN to classify characters or words.
+          Evaluate recognition accuracy and visualize predictions on sample images.</div>
+      </div>
+      <div class="qa-col right">
+        <div class="ru-question">В: Реализуйте систему распознавания рукописного текста с помощью CNN.</div>
+        <div class="ru-answer">О: Используйте датасет изображений рукописного текста. Обучите CNN для классификации
+          символов или слов. Оцените точность распознавания и визуализируйте предсказания на примерах.</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <!-- QA BLOCKS END -->
   </div>
 </body>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -155,6 +155,58 @@
 <body>
   <h1>AI Questions & Answers: English | Русский</h1>
   <div class="main-container">
+    <!-- INTRO BLOCK START -->
+    <div class="intro-row" style="display:flex; margin:0 24px 32px 24px; background:#eaf1fb; border-radius:8px;">
+      <div class="intro-col left"
+        style="width:50%; padding:24px 32px; border-right:1px solid #d2e3f7; box-sizing:border-box;">
+        <h2 style="color:#2a4d7a; margin-top:0;">What is Artificial Intelligence?</h2>
+        <p style="font-size:1.08em; color:#223; margin-bottom:10px;">Artificial Intelligence (AI) is a field of computer
+          science focused on creating systems and programs capable of performing tasks that typically require human
+          intelligence: understanding language, learning, reasoning, pattern recognition, decision making, and more.</p>
+        <p style="font-size:1.05em; color:#223; margin-bottom:10px;">Modern AI tools include:</p>
+        <ul style="font-size:1.05em; color:#223; margin-bottom:10px;">
+          <li><b>ChatGPT</b> — a conversational AI by OpenAI, able to chat, answer questions, help with coding,
+            creativity, and learning.</li>
+          <li><b>Midjourney, DALL-E, Stable Diffusion</b> — image generation from text descriptions.</li>
+          <li><b>Copilot, Tabnine</b> — intelligent coding assistants.</li>
+          <li><b>Google Bard, Gemini, Claude</b> — other modern language and multimodal models.</li>
+        </ul>
+        <p style="font-size:1.05em; color:#223; margin-bottom:10px;">Current AI trends:</p>
+        <ul style="font-size:1.05em; color:#223;">
+          <li>Rapid development of large language models (LLMs) like ChatGPT, Gemini, Claude.</li>
+          <li>Integration of AI into everyday services, business, and education.</li>
+          <li>Growth of generative models for text, images, music, and video.</li>
+          <li>Focus on ethics, transparency, and AI safety.</li>
+          <li>Development of tools for automation, data analysis, and creativity support.</li>
+        </ul>
+      </div>
+      <div class="intro-col right" style="width:50%; padding:24px 32px; box-sizing:border-box;">
+        <h2 style="color:#2a4d7a; margin-top:0;">Что такое искусственный интеллект?</h2>
+        <p style="font-size:1.08em; color:#223; margin-bottom:10px;">Искусственный интеллект (Artificial Intelligence,
+          AI) — это область информатики, занимающаяся созданием систем и программ, способных выполнять задачи, которые
+          обычно требуют человеческого интеллекта: понимание языка, обучение, рассуждение, распознавание образов,
+          принятие решений и многое другое.</p>
+        <p style="font-size:1.05em; color:#223; margin-bottom:10px;">Современные инструменты искусственного интеллекта
+          включают:</p>
+        <ul style="font-size:1.05em; color:#223; margin-bottom:10px;">
+          <li><b>ChatGPT</b> — диалоговый искусственный интеллект от OpenAI, способный поддерживать беседу, отвечать на
+            вопросы, помогать с программированием, творчеством и обучением.</li>
+          <li><b>Midjourney, DALL-E, Stable Diffusion</b> — генерация изображений по текстовому описанию.</li>
+          <li><b>Copilot, Tabnine</b> — интеллектуальные помощники для программистов.</li>
+          <li><b>Google Bard, Gemini, Claude</b> — другие современные языковые и мультимодальные модели.</li>
+        </ul>
+        <p style="font-size:1.05em; color:#223; margin-bottom:10px;">Текущие тенденции в ИИ:</p>
+        <ul style="font-size:1.05em; color:#223;">
+          <li>Быстрое развитие больших языковых моделей (LLM), таких как ChatGPT, Gemini, Claude.</li>
+          <li>Интеграция ИИ в повседневные сервисы, бизнес и образование.</li>
+          <li>Рост генеративных моделей для текста, изображений, музыки и видео.</li>
+          <li>Внимание к этике, прозрачности и безопасности ИИ.</li>
+          <li>Развитие инструментов для автоматизации, анализа данных и поддержки творчества.</li>
+        </ul>
+      </div>
+    </div>
+    <!-- INTRO BLOCK END -->
+
     <!-- QA BLOCKS START -->
     <div class="qa-row">
       <div class="qa-col left">
@@ -1481,8 +1533,10 @@
       </div>
       <div class="qa-col right">
         <div class="ru-question">В: Создайте генеративно-состязательную сеть (GAN) для генерации изображений.</div>
-        <div class="ru-answer">О: Постройте GAN с генератором (создаёт изображения из шума) и дискриминатором (отличает
-          реальные изображения от сгенерированных). Обучайте обе сети в соревновании, пока генератор не начнёт создавать
+        <div class="ru-answer">О: Постройте GAN с генератором (создаёт изображения из шума) и дискриминатором
+          (отличает
+          реальные изображения от сгенерированных). Обучайте обе сети в соревновании, пока генератор не начнёт
+          создавать
           реалистичные изображения. Оцените визуально и по метрикам (например, FID).</div>
       </div>
     </div>
@@ -1491,12 +1545,14 @@
       <div class="qa-col left">
         <div class="question">Q: Train a transformer model for text classification.</div>
         <div class="answer">A: Use a labeled text dataset. Fine-tune a pre-trained transformer (e.g., BERT) or train
-          from scratch for classification. Evaluate performance using accuracy, F1-score, and confusion matrix.</div>
+          from scratch for classification. Evaluate performance using accuracy, F1-score, and confusion matrix.
+        </div>
       </div>
       <div class="qa-col right">
         <div class="ru-question">В: Обучите трансформер-модель для классификации текста.</div>
         <div class="ru-answer">О: Используйте размеченный текстовый датасет. Доводите дообучением предобученный
-          трансформер (например, BERT) или обучайте с нуля для задачи классификации. Оцените по accuracy, F1 и confusion
+          трансформер (например, BERT) или обучайте с нуля для задачи классификации. Оцените по accuracy, F1 и
+          confusion
           matrix.</div>
       </div>
     </div>
@@ -1504,7 +1560,8 @@
     <div class="qa-row">
       <div class="qa-col left">
         <div class="question">Q: Implement neural style transfer for image processing.</div>
-        <div class="answer">A: Use a pre-trained CNN to extract content and style features from two images. Optimize a
+        <div class="answer">A: Use a pre-trained CNN to extract content and style features from two images. Optimize
+          a
           new image to match the content of one and the style of the other by minimizing a combined loss function.
           Visualize the stylized result.</div>
       </div>
@@ -1524,7 +1581,8 @@
           with precision, recall, and ROC-AUC.</div>
       </div>
       <div class="qa-col right">
-        <div class="ru-question">В: Разработайте систему обнаружения мошенничества с помощью глубокого обучения.</div>
+        <div class="ru-question">В: Разработайте систему обнаружения мошенничества с помощью глубокого обучения.
+        </div>
         <div class="ru-answer">О: Соберите размеченный датасет транзакций. Обучите глубокую нейросеть для классификации
           транзакций на мошеннические и легитимные. Используйте балансировку классов и регуляризацию. Оцените по
           precision, recall, ROC-AUC.</div>
@@ -1535,13 +1593,16 @@
       <div class="qa-col left">
         <div class="question">Q: Implement a text processing pipeline, including tokenization, stemming, and
           lemmatization.</div>
-        <div class="answer">A: Write a pipeline that splits text into tokens, applies stemming (reducing words to their
-          root form), and lemmatization (reducing words to their dictionary form). Use libraries like NLTK or spaCy for
+        <div class="answer">A: Write a pipeline that splits text into tokens, applies stemming (reducing words to
+          their
+          root form), and lemmatization (reducing words to their dictionary form). Use libraries like NLTK or spaCy
+          for
           implementation.</div>
       </div>
       <div class="qa-col right">
         <div class="ru-question">В: Реализуйте пайплайн обработки текста: токенизация, стемминг, лемматизация.</div>
-        <div class="ru-answer">О: Напишите пайплайн, который разбивает текст на токены, применяет стемминг (сведение к
+        <div class="ru-answer">О: Напишите пайплайн, который разбивает текст на токены, применяет стемминг (сведение
+          к
           корню) и лемматизацию (сведение к словарной форме). Используйте библиотеки NLTK или spaCy.</div>
       </div>
     </div>
@@ -1564,8 +1625,10 @@
     <div class="qa-row">
       <div class="qa-col left">
         <div class="question">Q: Train a Word2Vec model for word vector representations.</div>
-        <div class="answer">A: Use a large text corpus to train a Word2Vec model (CBOW or Skip-gram). The model learns
-          vector representations for words that capture semantic relationships. Visualize embeddings with t-SNE or PCA.
+        <div class="answer">A: Use a large text corpus to train a Word2Vec model (CBOW or Skip-gram). The model
+          learns
+          vector representations for words that capture semantic relationships. Visualize embeddings with t-SNE or
+          PCA.
         </div>
       </div>
       <div class="qa-col right">
@@ -1580,12 +1643,14 @@
       <div class="qa-col left">
         <div class="question">Q: Implement a chatbot using LSTM or a transformer-based model.</div>
         <div class="answer">A: Build a chatbot that uses an LSTM or transformer architecture to generate responses.
-          Train the model on conversational data and evaluate its ability to produce coherent, contextually appropriate
+          Train the model on conversational data and evaluate its ability to produce coherent, contextually
+          appropriate
           replies.</div>
       </div>
       <div class="qa-col right">
         <div class="ru-question">В: Реализуйте чат-бота на LSTM или трансформере.</div>
-        <div class="ru-answer">О: Постройте чат-бота, использующего LSTM или трансформер для генерации ответов. Обучите
+        <div class="ru-answer">О: Постройте чат-бота, использующего LSTM или трансформер для генерации ответов.
+          Обучите
           модель на диалоговых данных и оцените её способность выдавать связные и уместные ответы.</div>
       </div>
     </div>
@@ -1593,7 +1658,8 @@
     <div class="qa-row">
       <div class="qa-col left">
         <div class="question">Q: Train a sentiment analysis model using deep learning.</div>
-        <div class="answer">A: Use a labeled dataset of text and sentiment labels. Train a deep neural network (e.g.,
+        <div class="answer">A: Use a labeled dataset of text and sentiment labels. Train a deep neural network
+          (e.g.,
           CNN, LSTM, or transformer) to classify sentiment. Evaluate with accuracy, F1-score, and confusion matrix.
         </div>
       </div>
@@ -1607,15 +1673,18 @@
     <div class="divider"></div>
     <div class="qa-row">
       <div class="qa-col left">
-        <div class="question">Q: Implement a machine translation system based on sequence-to-sequence (seq2seq) models.
+        <div class="question">Q: Implement a machine translation system based on sequence-to-sequence (seq2seq)
+          models.
         </div>
         <div class="answer">A: Build a seq2seq model with encoder and decoder networks for translating text from one
-          language to another. Train on parallel corpora and evaluate translation quality using BLEU or similar metrics.
+          language to another. Train on parallel corpora and evaluate translation quality using BLEU or similar
+          metrics.
         </div>
       </div>
       <div class="qa-col right">
         <div class="ru-question">В: Реализуйте систему машинного перевода на основе seq2seq-моделей.</div>
-        <div class="ru-answer">О: Постройте seq2seq-модель с энкодером и декодером для перевода текста между языками.
+        <div class="ru-answer">О: Постройте seq2seq-модель с энкодером и декодером для перевода текста между
+          языками.
           Обучайте на параллельных корпусах, оценивайте качество перевода по BLEU или аналогичным метрикам.</div>
       </div>
     </div>
@@ -1629,7 +1698,8 @@
       </div>
       <div class="qa-col right">
         <div class="ru-question">В: Разработайте систему обнаружения спама с помощью методов NLP.</div>
-        <div class="ru-answer">О: Соберите датасет сообщений с метками спам/не спам. Извлеките признаки с помощью NLP
+        <div class="ru-answer">О: Соберите датасет сообщений с метками спам/не спам. Извлеките признаки с помощью
+          NLP
           (TF-IDF, эмбеддинги), обучите классификатор (логистическая регрессия, SVM или нейросеть), оцените по
           precision, recall, F1.</div>
       </div>
@@ -1638,7 +1708,8 @@
     <div class="qa-row">
       <div class="qa-col left">
         <div class="question">Q: Fine-tune a pre-trained BERT model for text classification.</div>
-        <div class="answer">A: Use a labeled text dataset. Load a pre-trained BERT model, add a classification head, and
+        <div class="answer">A: Use a labeled text dataset. Load a pre-trained BERT model, add a classification head,
+          and
           fine-tune on your data. Evaluate with accuracy, F1-score, and confusion matrix.</div>
       </div>
       <div class="qa-col right">
@@ -1670,7 +1741,8 @@
           query. Evaluate with metrics like MAP or NDCG.</div>
       </div>
       <div class="qa-col right">
-        <div class="ru-question">В: Разработайте поисковую систему на ИИ, ранжирующую документы по релевантности.</div>
+        <div class="ru-question">В: Разработайте поисковую систему на ИИ, ранжирующую документы по релевантности.
+        </div>
         <div class="ru-answer">О: Постройте поисковик, индексирующий документы, извлекающий признаки (TF-IDF,
           эмбеддинги) и использующий алгоритм ранжирования (BM25, нейросетевой ранжировщик) для сортировки по
           релевантности. Оцените по MAP или NDCG.</div>
